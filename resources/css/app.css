@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .ticket {
+        @apply relative bg-white rounded-lg shadow-sm border border-ink-100 flex overflow-hidden;
+    }
+    .ticket-stub {
+        @apply relative flex flex-col items-center justify-center gap-1 w-28 shrink-0 bg-ink text-paper py-4 px-2 text-center;
+    }
+    .ticket-divider {
+        @apply relative w-0 border-l-2 border-dashed border-ink-200;
+    }
+    .ticket-divider::before,
+    .ticket-divider::after {
+        content: '';
+        @apply absolute w-4 h-4 bg-paper rounded-full -left-2;
+    }
+    .ticket-divider::before { top: -8px; }
+    .ticket-divider::after { bottom: -8px; }
+}
+[x-cloak] { display: none !important; }
